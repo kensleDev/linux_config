@@ -22,12 +22,6 @@ nvm install 12.13.0
 npm i -g yarn 
 
 # Clean up zsh
-source ~/.zshrc &&
-
-echo "Run the following commands:"
-"----------------------------------"
-echo "loadnvm"
-echo "nvm install 12.13.0 && npm i -f yarn"
-
-
+echo "zsh" >> $HOME_DIR/.bashrc
+exec bash -l
 
