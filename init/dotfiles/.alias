@@ -1,0 +1,166 @@
+CURRENT_USER=$(whoami)
+
+alias removeQuotes="for f in *; do mv -i "$f" "${f//[\"[:space:]]}"; done"
+
+function gitKeys() {
+   curl -u "kensleDev:B00mb00mgb" --data '{"title":"lappy-wsl","key":"'"$(cat ~/.ssh/id_rsa.pub)"'"}' https://api.github.com/user/keys
+}
+
+
+# setxkbmap gb
+
+
+function vim() {
+  /home/$CURRENT_USER/.config/nvim/nvim.appimage $1
+}
+
+function nvim() {
+  /home/$CURRENT_USER/.config/nvim/nvim.appimage $1
+}
+
+function v() {
+  /home/$CURRENT_USER/.config/nvim/nvim.appimage $1
+}
+
+
+#------------------------------------------------- SHARED
+alias s='sudo'
+alias basha='cat ~/.bash_aliases'
+alias bashaa='cat ~/.bash_aliases_server'
+alias cb='xsel --clipboard'
+alias rr='cd /home/kd/repos'
+alias ba='nano ~/.aliases/main'
+
+#------DIRS------#
+HOME="/home/kd"
+BA='.aliases/main'
+TM='.tmux.conf'
+ZH='.zshrc'
+NG='/etc/ngnix/sites_avalible.jquinandy.pro'
+
+# ------------------------------ Apt get
+
+alias install='sudo apt-get install -y'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+
+alias list='sudo dpkg -l'
+alias findapp='sudo apt list --installed | grep -i apache'
+
+# ------------------------------ Yarn
+
+alias yi='yarn install --prefer-offline'
+
+
+# --------------------------------File Ops
+
+alias c='clear'
+alias l='ls'
+alias laa='ls -a'
+alias la='ls -la'
+alias lhh='ls -d .?* '
+alias lh='ls -ld .?* '
+
+alias Del='sudo rm -rf'
+alias del='rm -rf'
+
+alias ev='sudo vim'
+alias en='sudo nano'
+
+alias es='sudo chmod u+x'
+alias ra='source ~/.bash_aliases'
+
+
+# ---------------------------------TMUX
+
+alias tmns='tmux new -s'
+alias tmas='tmux a -t'
+alias tmks='tmux kill-session -t'
+alias tmsc='tmux a -t sysconfig'
+alias tmls='tmux list'
+
+
+# ---------------------------------docker
+function p() { pnpm $1 $2 }
+
+function dk() { docker "$1" "$2" }
+function dc() { docker-compose $1 $2 }
+
+dktop() {
+  docker stats --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerI}} {{.MemPerI}}\t{{.NetIO}}\t{{.BlockIO}}"
+}
+
+dklg() {
+  docker logs -f `docker ps | grep $1 | awk '{print $1}'`
+}
+
+dki() {
+  docker ps | grep $1
+}
+
+dkid() {
+  docker ps | grep $1 | awk '{print $1}'
+}
+
+
+
+# ---------------------------------Utilities
+
+alias rpid='ps -A | grep'
+alias dlpics='wget -nd -H -p -A jpg,jpeg,png,gif -e robots=off'
+alias tmu='unset TMUX; tmux'
+alias updatesubs='git submodule foreach git pull origin master'
+alias ip='ifconfig eth0'
+
+
+alias s1='ssh -R 52698:localhost:52698 kd@151.80.141.108'
+alias s2='ssh -R 52698:localhost:52698 kd@54.36.99.98'
+
+alias npmb='npm run build'
+alias npmd='npm run dev'
+alias npmid='npm i -D'
+alias npmig='sudo npm i -F'
+
+alias genTags='sh /usr/local/bin/ctags'
+
+alias gf='git ls-files --exclude-standard --others --cached | fzf'
+alias f='fzf'
+# alias vim='vim -u ~/.vim/vimrc/.vimrc'
+
+alias st=' cd /home/kd/repos/server-tools ; bash server_tools'
+
+# --------------------------------
+
+function clone() {
+  clear
+  echo "Enter repo name || url"
+  echo "------------------------"
+  read repo
+  clear
+
+  start=$(echo $repo | cut -c 1-4)
+
+  if [ "$start" = "http" ]; then
+    git clone $repo
+  else
+    git clone git@github.com:kensleDev/$repo
+  fi
+}
+
+function ac() {
+  clear
+  echo "---------------------------"
+  echo "Enter emoji (without :'s)"
+  echo "---------------------------"
+  read emoji
+
+  clear
+  echo "---------------------------"
+  echo "Enter commit message"
+  echo "---------------------------"
+  read msg
+  clear
+
+  git add -A
+  git commit -m ":$emoji: $msg"
+}
