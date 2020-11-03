@@ -33,6 +33,18 @@ let g:coc_explorer_global_presets = {
 	\   }
 	\ }
 
+function! PlugCoc(info) abort
+  if a:info.status ==? 'installed' || a:info.force
+    !yarn install
+    call coc#util#install_extension(join(get(s:, 'coc_extensions', [])))
+  elseif a:info.status ==? 'updated'
+    !yarn install
+    call coc#util#update()
+  endif
+  call PlugRemotePlugins(a:info)
+endfunction
+
+
 let g:coc_global_extensions = [
 			\ 'coc-ultisnips',
 			\ 'coc-json',
