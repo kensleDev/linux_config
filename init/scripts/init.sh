@@ -7,6 +7,25 @@ function log() {
   echo "-------------------------------"
 }
 
+function git_upload_ssh_key () {
+  read -p "Enter github email : " email
+  echo "Using email $email"
+  if [ ! -f ~/.ssh/id_rsa ]; then
+    ssh-keygen -t rsa -b 4096 -C "$email"
+    ssh-add ~/.ssh/id_rsa
+  fi
+  pub=`cat ~/.ssh/id_rsa.pub`
+  read -p "Enter github username: " githubuser
+  echo "Using username $githubuser"
+  read -s -p "Enter github password for user $githubuser: " githubpass
+  echo
+  read -p "Enter github OTP: " otp
+  echo "Using otp $otp"
+  echo
+  confirm
+  curl -u "$githubuser:$githubpass" -X POST -d "{\"title\":\"`hostname`\",\"key\":\"$pub\"}" --header "x-github-otp: $otp" https://api.github.com/user/keys
+}
+
 # install zsh
 sudo apt-get install -y zsh curl &&
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended &&
@@ -88,8 +107,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' &&
 log "Installed Vim Plug" &&
 
-
-
 # nvm, node, yarn 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash &&
 export NVM_DIR="$HOME/.nvm"
@@ -102,4 +119,5 @@ log "Installed node and yarn" &&
 # Clean up zsh
 echo "zsh" >> $HOME_DIR/.bashrc &&
 exec bash -l
+git_upload_ssh_key
 
