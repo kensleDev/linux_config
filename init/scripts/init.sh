@@ -74,6 +74,11 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
 ~/.fzf/install --all &&
 log "Installed FZF" &&
 
+# vim plug 
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+log "Installed Vim Plug"
+
 # nvm, node, yarn 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash &&
 export NVM_DIR="$HOME/.nvm"
