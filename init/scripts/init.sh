@@ -8,16 +8,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # if the script stoppped when installing oh my zsh resume from here
 curl -L git.io/antigen > $HOME_DIR/.oh-my-zsh/plugins/antigen.zsh &&
 
-# Copy Dotfiles
-<<<<<<< HEAD
-cp ../dotfiles/.zshrc /home/kd
-cp ../dotfiles/.alias /home/kd
-cp ../dotfiles/.gitconfig /home/kd
-=======
+# copy dotfiles
 cp ../dotfiles/.zshrc $HOME_DIR
 cp ../dotfiles/.alias $HOME_DIR
 cp ../dotfiles/.gitconfig $HOME_DIR
-
 
 # nvm, node, yarn 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash &&
