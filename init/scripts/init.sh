@@ -116,6 +116,13 @@ nvm install 12.13.0 &&
 npm i -g yarn &&
 log "Installed node and yarn" &&
 
+# Vim plugins
+~/.config/nvim/nvim.appimage +PlugInstall +qall > /dev/null &&
+cd ~/.config/coc/extensions &&
+yarn install &&
+cd ~/ &&
+log "Installed vim plugins" &&
+
 # Clean up zsh
 echo "zsh" >> $HOME_DIR/.bashrc &&
 exec bash -l
