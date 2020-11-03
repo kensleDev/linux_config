@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'unblevable/quick-scope'
 	Plug 'haya14busa/incsearch.vim'
 	Plug 'herrbischoff/cobalt2.vim'
-	" Plug 'https://github.com/bogdan0083/vim-easymotion.git', { 'branch': 'fix/label-position' }
 	Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -18,8 +17,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'voldikss/vim-floaterm'
-	" Plug 'ludovicchabant/vim-gutentags'
 	Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+	Plug 'airblade/vim-rooter'
+	
+	" Plug 'ludovicchabant/vim-gutentags'
+	" Plug 'https://github.com/bogdan0083/vim-easymotion.git', { 'branch': 'fix/label-position' }
+
 
 " Initialize plugin system
 call plug#end()
