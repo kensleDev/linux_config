@@ -117,10 +117,12 @@ npm i -g yarn &&
 log "Installed node and yarn" &&
 
 # Vim plugins
-~/.config/nvim/nvim.appimage +PlugInstall +qall > /dev/null &&
+
 cd ~/.config/coc/extensions &&
-yarn install &&
+npm install &&
 cd ~/ &&
+~/.config/nvim/nvim.appimage +PlugInstall +qall > /dev/null &&
+~/.config/nvim/nvim.appimage +CocInstall coc-marketplace +qall > /dev/null &&
 log "Installed vim plugins" &&
 
 # Clean up zsh
