@@ -13,6 +13,12 @@ cp ../dotfiles/.zshrc $HOME_DIR
 cp ../dotfiles/.alias $HOME_DIR
 cp ../dotfiles/.gitconfig $HOME_DIR
 
+# setup Fonts
+sudo apt-get install fontconfig &&
+mkdir ~/.fonts &&
+cp ~/.config/fonts/VictorMono/TTF/* ~/.fonts &&
+fc-cache -f -c &&
+
 # nvm, node, yarn 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash &&
 export NVM_DIR="$HOME/.nvm"
