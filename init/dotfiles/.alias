@@ -3,7 +3,9 @@ CURRENT_USER=$(whoami)
 alias removeQuotes="for f in *; do mv -i "$f" "${f//[\"[:space:]]}"; done"
 
 function gitKeys() {
-   curl -u "kensleDev:B00mb00mgb" --data '{"title":"lappy-wsl","key":"'"$(cat ~/.ssh/id_rsa.pub)"'"}' https://api.github.com/user/keys
+   read -p 'Username: ' uservar
+   read -p 'Password: ' passvar
+   curl -u "$uservar:$passvar" --data '{"title":"lappy-wsl","key":"'"$(cat ~/.ssh/id_rsa.pub)"'"}' https://api.github.com/user/keys
 }
 
 
