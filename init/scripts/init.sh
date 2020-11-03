@@ -28,7 +28,14 @@ sudo fc-cache -f -v &&
 log "setup fonts" &&
 
 # Build tools 
-sudo apt-get install -y autotools-dev autoconf pkg-config
+sudo apt-get install -y autotools-dev autoconf pkg-config &&
+sudo apt install -y software-properties-common &&
+log "Installed build tools" &&
+
+#python
+sudo add-apt-repository -y ppa:deadsnakes/ppa &&
+sudo apt-get update &&
+sudo apt install -y python2.7 python-pip python3.8 python3-pip &&
 
 # ripgrep
 sudo add-apt-repository -y ppa:x4121/ripgrep &&
