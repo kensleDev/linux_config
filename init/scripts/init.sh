@@ -16,14 +16,12 @@ cp ../dotfiles/.gitconfig $HOME_DIR
 
 # nvm, node, yarn 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash &&
-~/.nvm/nvm.sh
-nvm install 12.13.0 &&
-npm i -g yarn
 
 # Clean up zsh
-echo "zsh" >> $HOME_DIR/.bashrc &&
-exec bash -l
+source ~/.zshrc &&
 
+echo "loadnvm"
+echo "nvm install 12.13.0 && npm i -f yarn"
 
 
 
