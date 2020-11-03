@@ -36,6 +36,7 @@ log "Installed build tools" &&
 sudo add-apt-repository -y ppa:deadsnakes/ppa &&
 sudo apt-get update &&
 sudo apt install -y python2.7 python-pip python3.8 python3-pip &&
+log "Installed python" &&
 
 # ripgrep
 sudo add-apt-repository -y ppa:x4121/ripgrep &&
