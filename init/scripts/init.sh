@@ -88,7 +88,7 @@ log "Installed fd" &&
 
 # Silver Sercher Ag
 sudo apt install -y silversearcher-ag &&
-log "Installed Silver Searcher ag" &7
+log "Installed Silver Searcher ag" &&
 
 # bat
 wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb &&
