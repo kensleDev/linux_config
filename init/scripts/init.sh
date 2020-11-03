@@ -27,11 +27,33 @@ cp ~/.config/fonts/VictorMono/TTF/* ~/.fonts &&
 sudo fc-cache -f -v &&
 log "setup fonts" &&
 
+# Build tools 
+sudo apt-get install -y autotools-dev autoconf pkg-config
+
 # ripgrep
 sudo add-apt-repository -y ppa:x4121/ripgrep &&
 sudo apt-get update &&
-sudo apt-get install ripgrep exuberant-ctags -y &&
+sudo apt-get install ripgrep -y &&
 log "Installed Ripgrep" &&
+
+# Universal Ctags
+git clone https://github.com/universal-ctags/ctags.git &&
+cd ctags &&
+./autogen.sh &&
+./configure &&
+make &&
+sudo make install &&
+cd ..
+sudo rm -rf ctags
+
+# fd-find
+wget https://github.com/sharkdp/fd/releases/download/v8.1.1/fd-musl_8.1.1_amd64.deb &&
+sudo dpkg -i fd-musl_8.1.1_amd64.deb &&
+log "Installed fd"
+
+# Silver Sercher Ag
+sudo apt install -y silversearcher-ag &&
+log "Installed Silver Searcher ag"
 
 # bat
 wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb &&
