@@ -25,13 +25,24 @@ sudo apt-get install fontconfig &&
 mkdir ~/.fonts &&
 cp ~/.config/fonts/VictorMono/TTF/* ~/.fonts &&
 sudo fc-cache -f -v &&
-log "setup fonts"
+log "setup fonts" &&
 
-# command line tools - vim
-sudo apt-get install ripgrep bat ctags -y &&
+# ripgrep
+sudo add-apt-repository -y ppa:x4121/ripgrep &&
+sudo apt-get update &&
+sudo apt-get install ripgrep exuberant-ctags -y &&
+log "Installed Ripgrep" &&
+
+# bat
+wget https://github.com/sharkdp/bat/releases/download/v0.15.4/bat_0.15.4_amd64.deb &&
+sudo dpkg -i ./bat_0.15.4_amd64.deb &&
+sudo rm -rf bat_0.15.4_amd64.deb &&
+log "Installed bat" &&
+
+# fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
 ~/.fzf/install --all &&
-log "Installed command line tools"
+log "Installed FZF" &&
 
 # nvm, node, yarn 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash &&
