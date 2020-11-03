@@ -10,7 +10,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 curl -L git.io/antigen > ~/.oh-my-zsh/plugins/antigen.zsh &&
 
 # Copy Dotfiles
-cp ../dofiles/.zshrc /home/kd
+cp ../dotfiles/.zshrc /home/kd
 cp ../dotfiles/.alias /home/kd
 cp ../dotfiles/.gitconfig /home/kd
 
