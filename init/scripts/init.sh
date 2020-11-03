@@ -19,6 +19,13 @@ mkdir ~/.fonts &&
 cp ~/.config/fonts/VictorMono/TTF/* ~/.fonts &&
 fc-cache -f -c &&
 
+# command line tools - vim
+sudo apt-get install ripgrep &&
+sudo apt install bat &&
+sudo apt-get install ctags &&
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
+~/.fzf/install --all &&
+
 # nvm, node, yarn 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash &&
 export NVM_DIR="$HOME/.nvm"
