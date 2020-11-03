@@ -19,8 +19,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'voldikss/vim-floaterm'
 	Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 	Plug 'airblade/vim-rooter'
-	Plug 'neoclide/coc-neco'
-        Plug 'neoclide/coc.nvim', {'do': function('PlugCoc')}
 	
 	" Plug 'ludovicchabant/vim-gutentags'
 	" Plug 'https://github.com/bogdan0083/vim-easymotion.git', { 'branch': 'fix/label-position' }
