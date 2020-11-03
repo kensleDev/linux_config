@@ -45,26 +45,6 @@ function! PlugCoc(info) abort
 endfunction
 
 
-let g:coc_global_extensions = [
-			\ 'coc-ultisnips',
-			\ 'coc-json',
-			\ 'coc-tsserver',
-			\ 'coc-html',
-			\ 'coc-css',
-			\ 'coc-yaml',
-			\ 'coc-highlight',
-			\ 'coc-angular',
-			\ 'coc-vueter',
-			\ 'coc-floaterm',
-			\ 'coc-tabnine',
-			\ 'coc-prettier',
-			\ 'coc-markdownlint',
-			\ 'coc-jest',
-			\ 'coc-explorer',
-			\ 'coc-eslint*',
-			\ ]
-
-
 " Use preset argument to open it
 nmap <space>ed :CocCommand explorer --preset .vim<CR>
 nmap <space>ef :CocCommand explorer --preset floating<CR>
