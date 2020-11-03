@@ -8,26 +8,20 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # if the script stoppped when installing oh my zsh resume from here
 curl -L git.io/antigen > $HOME_DIR/.oh-my-zsh/plugins/antigen.zsh &&
 
-# Copy Dotfiles
-<<<<<<< HEAD
-cp ../dotfiles/.zshrc /home/kd
-cp ../dotfiles/.alias /home/kd
-cp ../dotfiles/.gitconfig /home/kd
-=======
+# copy dotfiles
 cp ../dotfiles/.zshrc $HOME_DIR
 cp ../dotfiles/.alias $HOME_DIR
 cp ../dotfiles/.gitconfig $HOME_DIR
 
-
 # nvm, node, yarn 
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash &&
->>>>>>> a38d62596e29ca3932cd31833e351aefb7aabc29
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install 12.13.0
+npm i -g yarn 
 
 # Clean up zsh
-source ~/.zshrc &&
-
-echo "loadnvm"
-echo "nvm install 12.13.0 && npm i -f yarn"
-
-
+echo "zsh" >> $HOME_DIR/.bashrc
+exec bash -l
 
