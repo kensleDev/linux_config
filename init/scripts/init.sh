@@ -114,9 +114,9 @@ sudo gem install neovim
 log "Installed Ruby"
 
 # perl
-sudo apt-get install -y cpanminus
-sudo cpanm -n Neovim::Ext
-log "Installed perl"
+# sudo apt-get install -y cpanminus
+# sudo cpanm -n Neovim::Ext
+# log "Installed perl"
 
 # vim plug 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
