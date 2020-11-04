@@ -55,7 +55,10 @@ log "Installed build tools" &&
 sudo add-apt-repository -y ppa:deadsnakes/ppa &&
 sudo apt-get update &&
 sudo apt install -y python2.7 python-pip python3.8 python3-pip &&
+pip3 install neovim-remote &&
+python2 -m pip install --user --upgrade pynvim &&
 log "Installed python" &&
+
 
 # ripgrep
 sudo add-apt-repository -y ppa:x4121/ripgrep &&
@@ -101,6 +104,14 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
 ~/.fzf/install --all &&
 log "Installed FZF" &&
 
+# ranger
+sudo apt-get install -y ranger
+log "Installed Ranger"
+
+# ruby
+sudo apt-get install -y ruby-full
+sudo gem install neovim
+log "Installed Ruby"
 
 # vim plug 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
