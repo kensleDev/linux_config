@@ -28,13 +28,21 @@ let g:which_key_map['e'] = [ ':CocCommand explorer'       , 'explorer' ]
 let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
 let g:which_key_map['r'] = [ ':Ranger'                    , 'ranger' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
-let g:which_key_map['g'] = [ ':FloatermNew lazygit'       , 'git' ]
 let g:which_key_map['d'] = [ ':FloatermNew lazydocker'    , 'docker' ]
+let g:which_key_map['q'] = [ ':Startify'                  , 'startify' ]
 
 " a is for comment
 let g:which_key_map.a = {
      \ 'name' : '+comment',
      \ 'a' : [':Commentary' , 'comment'],
+     \ }
+
+" g is for g
+let g:which_key_map.g = {
+     \ 'name' : '+git',
+     \ 'g' : [':FloatermNew lazygit' , 'lazygit'],
+     \ 'b' : [':GBrowse'             , 'browse repo'],
+     \ 'd' : [':Gdiffsplit'          , 'diff split'],
      \ }
 
 " t is for terminal
@@ -45,6 +53,12 @@ let g:which_key_map.t = {
      \ 'r' : [':FloatermNext' , 'next'],
      \ 'e' : [':FloatermPrev' , 'prev'],
      \ }
+
+let g:which_key_map.f = {
+      \ 'name' : '+find & replace' ,
+      \ 'b' : [':Farr --source=vimgrep'    , 'files'],
+      \ 'p' : [':Farr --source=rgnvim'     , 'project'],
+      \ }
 
 " s is for search
 let g:which_key_map.s = {

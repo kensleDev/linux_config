@@ -18,10 +18,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'voldikss/vim-floaterm'
 	Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-	Plug 'airblade/vim-rooter'
-	
-	" Plug 'ludovicchabant/vim-gutentags'
-	" Plug 'https://github.com/bogdan0083/vim-easymotion.git', { 'branch': 'fix/label-position' }
+        Plug 'mhinz/vim-startify'
+	Plug 'ChristianChiarulli/far.vim'
+	Plug 'mhinz/vim-signify'
+	Plug 'tpope/vim-rhubarb'
+	Plug 'junegunn/gv.vim'
+	Plug 'tpope/vim-fugitive'
 
 
 " Initialize plugin system
@@ -40,5 +42,8 @@ source $HOME/.config/nvim/plugins/config/airline.config.vim
 source $HOME/.config/nvim/plugins/config/whichkey.config.vim
 source $HOME/.config/nvim/plugins/config/floaterm.config.vim
 source $HOME/.config/nvim/plugins/config/ranger.config.vim
+source $HOME/.config/nvim/plugins/config/start_page.config.vim
+source $HOME/.config/nvim/plugins/config/far.config.vim
+source $HOME/.config/nvim/plugins/config/signify.config.vim
 
 " source $HOME/.config/nvim/plugins/config/easymotion.vim
