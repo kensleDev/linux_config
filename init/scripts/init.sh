@@ -114,7 +114,8 @@ sudo gem install neovim
 log "Installed Ruby"
 
 # perl
-sudo cpan -n Neovim::Ext
+sudo apt-get install cpanminus
+sudo cpanm -n Neovim::Ext
 log "Installed perl"
 
 # vim plug 
