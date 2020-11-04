@@ -66,11 +66,10 @@ pip3 install neovim-remote &&
 python2 -m pip install --user --upgrade pynvim &&
 log "Installed python" &&
 
-
 # ripgrep
-sudo add-apt-repository -y ppa:x4121/ripgrep &&
-sudo apt-get update &&
-sudo apt-get install ripgrep -y &&
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb &&
+sudo dpkg -i ripgrep_11.0.2_amd64.deb &&
+sudo rm -rf ripgrep_11.0.2_amd64.deb
 log "Installed Ripgrep" &&
 
 # lazy git 
