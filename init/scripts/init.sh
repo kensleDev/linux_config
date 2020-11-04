@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ------------------------------------ COMMAND LINE
 HOME_DIR=/home/kd
 
@@ -6,6 +8,11 @@ function log() {
   echo "-> $1"
   echo "-------------------------------"
 }
+
+#source 'lib.trap.sh'
+#echo "doing something wrong now .."
+#echo "$foo"
+# exit 0
 
 function git_upload_ssh_key () {
   read -p "Enter github email : " email
