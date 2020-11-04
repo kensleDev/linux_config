@@ -59,22 +59,26 @@ sudo apt install -y software-properties-common &&
 log "Installed build tools" &&
 
 #python
-sudo add-apt-repository -y ppa:deadsnakes/ppa &&
+sudo add-apt-repository universe -y && 
 sudo apt-get update &&
-sudo apt install -y python2.7 python-pip python3.8 python3-pip &&
-pip3 install neovim-remote &&
-python2 -m pip install --user --upgrade pynvim &&
+sudo apt-get install -y python2 &&
+curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+sudo python2 get-pip.py &&
+pip2 install neovim-remote pynvim &&
+
+sudo add-apt-repository ppa:deadsnakes/ppa -y &&
+sudo apt-get install -y python3.8 python3-pip &&
+pip3 install neovim-remote pynvim &&
 log "Installed python" &&
 
-
-# ripgrep
-sudo add-apt-repository -y ppa:x4121/ripgrep &&
-sudo apt-get update &&
-sudo apt-get install ripgrep -y &&
+# ripgrepi
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb &&
+sudo dpkg -i ripgrep_11.0.2_amd64.deb &&
+sudo rm -rf ripgrep_11.0.2_amd64.deb
 log "Installed Ripgrep" &&
 
 # lazy git 
-sudo add-apt-repository -y ppa:lazygit-team/release &&
+sudo add-apt-repository ppa:lazygit-team/release -y &&
 sudo apt-get update &&
 sudo apt-get install -y lazygit &&
 
@@ -146,6 +150,7 @@ npm install &&
 cd ~/ &&
 ~/.config/nvim/nvim.appimage +PlugInstall +qall > /dev/null &&
 ~/.config/nvim/nvim.appimage +CocInstall coc-marketplace +qall > /dev/null &&
+~/.config/nvim/nvim.appimage +UpdateRemovePlugins +qall > /dev/null &&
 log "Installed vim plugins" &&
 
 # Clean up zsh
