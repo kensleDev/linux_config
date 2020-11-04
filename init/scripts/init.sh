@@ -62,13 +62,13 @@ log "Installed build tools" &&
 sudo add-apt-repository universe -y && 
 sudo apt-get update &&
 sudo apt-get install -y python2 &&
-curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py &&
 sudo python2 get-pip.py &&
-pip2 install neovim-remote pynvim &&
+python2 -m pip install --user --upgrade pynvim &&
 
 sudo add-apt-repository ppa:deadsnakes/ppa -y &&
 sudo apt-get install -y python3.8 python3-pip &&
-pip3 install neovim-remote pynvim &&
+python3 -m pip install --user --upgrade pynvim &&
 log "Installed python" &&
 
 # ripgrepi
@@ -120,9 +120,9 @@ sudo pip3 install ranger-fm &&
 log "Installed Ranger" &&
 
 # ruby
-sudo apt-get install -y ruby-full
-sudo gem install neovim
-log "Installed Ruby"
+sudo apt-get install -y ruby-full &&
+sudo gem install neovim &&
+log "Installed Ruby" &&
 
 # perl
 # sudo apt-get install -y cpanminus
