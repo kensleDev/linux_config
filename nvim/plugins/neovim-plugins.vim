@@ -41,7 +41,7 @@ source $HOME/.config/nvim/plugins/config/fzf.config.vim
 source $HOME/.config/nvim/plugins/config/airline.config.vim
 source $HOME/.config/nvim/plugins/config/whichkey.config.vim
 source $HOME/.config/nvim/plugins/config/floaterm.config.vim
-source $HOME/.config/nvim/plugins/config/ranger.config.vim
+" source $HOME/.config/nvim/plugins/config/ranger.config.vim
 source $HOME/.config/nvim/plugins/config/start_page.config.vim
 source $HOME/.config/nvim/plugins/config/far.config.vim
 source $HOME/.config/nvim/plugins/config/signify.config.vim
