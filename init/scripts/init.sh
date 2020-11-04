@@ -112,8 +112,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&
 log "Installed FZF" &&
 
 # ranger
-sudo apt-get install -y ranger
-log "Installed Ranger"
+sudo pip3 install ranger-fm &&
+log "Installed Ranger" &&
 
 # ruby
 sudo apt-get install -y ruby-full
