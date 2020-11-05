@@ -24,7 +24,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-rhubarb'
 	Plug 'junegunn/gv.vim'
 	Plug 'tpope/vim-fugitive'
-
+	Plug 'puremourning/vimspector'
 
 " Initialize plugin system
 call plug#end()

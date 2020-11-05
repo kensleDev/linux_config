@@ -26,7 +26,6 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Single mappings
 let g:which_key_map['e'] = [ ':CocCommand explorer --position right --width 70', 'explorer' ]
 let g:which_key_map['r'] = [ ':Ranger'                    , 'ranger' ]
-let g:which_key_map['d'] = [ ':FloatermNew lazydocker'    , 'docker' ]
 let g:which_key_map['q'] = [ ':Startify'                  , 'startify' ]
 
 " a is for comment
