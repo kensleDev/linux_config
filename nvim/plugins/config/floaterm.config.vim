@@ -4,13 +4,18 @@
 " hi FloatermBorder guibg=orange guifg=cyan
 " Set floaterm window background to gray once the cursor moves out from it
 " hi FloatermNC guibg=gray
+tnoremap <A-q> <C-h> <C-\><C-n> :FloatermUpdate --height=0.2 --wintype=normal --name=peek --position=bottom<CR>
+tnoremap <A-w> <C-h> <C-\><C-n> :FloatermUpdate --width=0.4 --wintype=normal --name=side --position=right<CR>
+tnoremap <A-e> <C-h> <C-\><C-n> :FloatermUpdate --height=0.9 --width=0.9 --wintype=floating --name=full --position=center<CR>
+
+tnoremap <A-z> <C-\><C-n><C-w>w 
+nnoremap <A-z> <C-w>w
 
 nnoremap <silent> <A-x>   :FloatermToggle<CR>
 tnoremap <silent> <A-x>   <C-\><C-n>:FloatermToggle<CR>
 
-nnoremap <A-a> :FloatermNew --height=0.2 --wintype=normal --name=server --position=bottom<CR>
-nnoremap <A-s> :FloatermNew --width=0.5 --wintype=normal --name=server --position=right<CR>
-nnoremap <A-d> :FloatermNew --height=0.9 --width=0.9 --wintype=floating --name=server --position=center<CR>
+tnoremap <A-c> <F2>
+
 " nnoremap <slient <A-z> :FloatermNew --height=0.6 --width=0.9 --wintype=floating --name=server --position=center"
 " tnoremap <slient <A-z> <C-\><C-n>:FloatermNew --height=0.6 --width=1 --wintype=floating --name=server --position=bottom --autoclose=2"
 
@@ -28,7 +33,7 @@ let g:floaterm_keymap_kill   = '<F5>'
 " Floaterm
 let g:floaterm_gitcommit='floaterm'
 let g:floaterm_autoinsert=1
-" let g:floaterm_width=0.8
-" let g:floaterm_height=0.8
+let g:floaterm_width=0.9
+let g:floaterm_height=0.9
 " let g:floaterm_wintitle=0
 let g:floaterm_autoclose=1

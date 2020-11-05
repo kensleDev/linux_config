@@ -25,9 +25,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " Single mappings
 let g:which_key_map['e'] = [ ':CocCommand explorer --position right --width 70', 'explorer' ]
-let g:which_key_map['h'] = [ '<C-W>s'                     , 'split below']
 let g:which_key_map['r'] = [ ':Ranger'                    , 'ranger' ]
-let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
 let g:which_key_map['d'] = [ ':FloatermNew lazydocker'    , 'docker' ]
 let g:which_key_map['q'] = [ ':Startify'                  , 'startify' ]
 
@@ -45,13 +43,12 @@ let g:which_key_map.g = {
      \ 'd' : [':Gdiffsplit'          , 'diff split'],
      \ }
 
-" t is for terminal
-let g:which_key_map.t = {
-     \ 'name' : '+terminal',
-     \ 'q' : [':FloatermNew' , 'new'],
-     \ 't' : [':FloatermToggle' , 'toggle'],
-     \ 'r' : [':FloatermNext' , 'next'],
-     \ 'e' : [':FloatermPrev' , 'prev'],
+" h is for comment
+let g:which_key_map.j = {
+     \ 'name' : '+splits',
+     \ 'j' : ['<C-w>s' , 'split below'],
+     \ 'k' : ['<C-w>v' , 'split right'],
+     \ ';' : ['<C-w>q' , 'split close'],
      \ }
 
 let g:which_key_map.f = {
@@ -89,12 +86,22 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'          , 'FZF'],
       \ }
 
+" t is for terminal
+let g:which_key_map.t = {
+     \ 'name' : '+terminal',
+     \ 'q' : [':FloatermNew' , 'new'],
+     \ 't' : [':FloatermToggle' , 'toggle'],
+     \ 'r' : [':FloatermNext' , 'next'],
+     \ 'e' : [':FloatermPrev' , 'prev'],
+     \ }
+
+
 " x is for comment
 let g:which_key_map.x = {
-     \ 'name' : '+tabs',
-     \ 'x' : [':bd' , 'tab close'],
-     \ 'c' : [':bn' , 'tab next'],
-     \ 'z' : [':bp' , 'tab prev'],
+     \ 'name' : '+buffers',
+     \ 'x' : [':bd' , 'buffer close'],
+     \ 'c' : [':bn' , 'buffer next'],
+     \ 'z' : [':bp' , 'buffer prev'],
      \ }
 
 

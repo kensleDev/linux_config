@@ -3,6 +3,8 @@ nnoremap <SPACE> <Nop>
 let mapleader=" "
 set signcolumn=yes
 
+set colorcolumn=80
+
 " Line numbers
 :set number relativenumber
 :augroup numbertoggle
@@ -14,3 +16,8 @@ set signcolumn=yes
 " imports
 source $HOME/.config/nvim/settings/base-settings.vim
 source $HOME/.config/nvim/plugins/neovim-plugins.vim
+
+
+
+autocmd ColorScheme * highlight! link SignColumn LineNr
+	
