@@ -153,6 +153,15 @@ cd ~/ &&
 ~/.config/nvim/nvim.appimage +UpdateRemovePlugins +qall > /dev/null &&
 log "Installed vim plugins" &&
 
+
+# TMux 
+
+sudo apt-get install -y tmux &&
+cp ../dotfiles/tmux.conf $HOME_DIR &&
+mkdir -R ~/.config/tmux/plugins &&
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm &&
+
+
 # Clean up zsh
 echo "zsh" >> $HOME_DIR/.bashrc &&
 exec bash -l
