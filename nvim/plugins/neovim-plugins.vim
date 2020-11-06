@@ -25,13 +25,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/gv.vim'
 	Plug 'tpope/vim-fugitive'
 	Plug 'puremourning/vimspector'
+	Plug 'tmux-plugins/vim-tmux'
+	Plug 'zhou13/vim-easyescape'
 
 " Initialize plugin system
 call plug#end()
 
 highlight Normal ctermfg=black ctermbg=lightgrey
-
-set termguicolors
 
 colorscheme cobalt2
 
@@ -41,9 +41,9 @@ source $HOME/.config/nvim/plugins/config/fzf.config.vim
 source $HOME/.config/nvim/plugins/config/airline.config.vim
 source $HOME/.config/nvim/plugins/config/whichkey.config.vim
 source $HOME/.config/nvim/plugins/config/floaterm.config.vim
-" source $HOME/.config/nvim/plugins/config/ranger.config.vim
+source $HOME/.config/nvim/plugins/config/ranger.config.vim
 source $HOME/.config/nvim/plugins/config/start_page.config.vim
 source $HOME/.config/nvim/plugins/config/far.config.vim
 source $HOME/.config/nvim/plugins/config/signify.config.vim
+source $HOME/.config/nvim/plugins/config/easyescape.config.vim
 
-" source $HOME/.config/nvim/plugins/config/easymotion.vim
