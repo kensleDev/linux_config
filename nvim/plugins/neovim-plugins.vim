@@ -27,6 +27,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'puremourning/vimspector'
 	Plug 'tmux-plugins/vim-tmux'
 	Plug 'zhou13/vim-easyescape'
+	Plug 'tpope/vim-surround'
 
 " Initialize plugin system
 call plug#end()

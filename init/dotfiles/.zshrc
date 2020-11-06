@@ -11,6 +11,8 @@ fi
 source $HOME_DIR/.alias
 alias loadnvm=". $HOME_DIR/.nvm/nvm.sh"
 source $HOME_DIR/.oh-my-zsh/plugins/antigen.zsh
+source $HOME_DIR/.config/init/scripts/project_launcher
+
 
 # Load the oh-my-zsh's library
 antigen use oh-my-zsh
