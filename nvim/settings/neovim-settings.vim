@@ -6,6 +6,7 @@ set signcolumn=yes
 set colorcolumn=80
 set background=dark
 set t_Co=256
+set autowriteall
 
 
 " Enable true color 启用终端24位色

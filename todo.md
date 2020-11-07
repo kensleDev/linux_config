@@ -9,7 +9,7 @@
 🍰 albert
 🍰 surround.vim
 🔨 script to open projects
-⏲  Vim autosave on buffer change
+🍰  Vim autosave on buffer change
 ⏲  Chrome white flash
 ⏲  sort keybinds. arrows and such
 ⏲  Terminal font
