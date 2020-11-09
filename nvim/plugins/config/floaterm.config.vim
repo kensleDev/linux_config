@@ -4,17 +4,17 @@
 " hi FloatermBorder guibg=orange guifg=cyan
 " Set floaterm window background to gray once the cursor moves out from it
 " hi FloatermNC guibg=gray
-tnoremap <A-q> <C-h> <C-\><C-n> :FloatermUpdate --height=0.2 --wintype=normal --name=peek --position=bottom<CR>
-tnoremap <A-w> <C-h> <C-\><C-n> :FloatermUpdate --width=0.4 --wintype=normal --name=side --position=right<CR>
-tnoremap <A-e> <C-h> <C-\><C-n> :FloatermUpdate --height=0.9 --width=0.9 --wintype=floating --name=full --position=center<CR>
+" tnoremap <A-q> <C-h> <C-\><C-n> :FloatermUpdate --height=0.2 --wintype=normal --name=peek --position=bottom<CR>
+" tnoremap <A-w> <C-h> <C-\><C-n> :FloatermUpdate --width=0.4 --wintype=normal --name=side --position=right<CR>
+" tnoremap <A-e> <C-h> <C-\><C-n> :FloatermUpdate --height=0.9 --width=0.9 --wintype=floating --name=full --position=center<CR>
 
-tnoremap <A-z> <C-\><C-n><C-w>w 
-nnoremap <A-z> <C-w>w
+" tnoremap <A-z> <C-\><C-n><C-w>w 
+" nnoremap <A-z> <C-w>w
 
-nnoremap <silent> <A-x>   :FloatermToggle<CR>
-tnoremap <silent> <A-x>   <C-\><C-n>:FloatermToggle<CR>
+" nnoremap <silent> <A-x>   :FloatermToggle<CR>
+" tnoremap <silent> <A-x>   <C-\><C-n>:FloatermToggle<CR>
 
-tnoremap <A-c> <F2>
+" tnoremap <A-c> <F2>
 
 " nnoremap <slient <A-z> :FloatermNew --height=0.6 --width=0.9 --wintype=floating --name=server --position=center"
 " tnoremap <slient <A-z> <C-\><C-n>:FloatermNew --height=0.6 --width=1 --wintype=floating --name=server --position=bottom --autoclose=2"
@@ -37,3 +37,29 @@ let g:floaterm_width=0.9
 let g:floaterm_height=0.9
 " let g:floaterm_wintitle=0
 let g:floaterm_autoclose=1
+
+" Terminal go back to normal mode
+tnoremap <Esc> <C-\><C-n>
+" When switching to terminal windows it goes into insert mode automatically
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
+let g:term_buf = 0
+function! Term_toggle()
+  1wincmd w
+  if g:term_buf == bufnr("")
+    setlocal bufhidden=hide
+    close
+  else
+    rightbelow new
+    12winc -
+    try
+      exec "buffer ".g:term_buf
+    catch
+      call termopen("bash", {"detach": 0})
+      let g:term_buf = bufnr("")
+    endtry
+    set laststatus=0
+    startinsert!
+  endif
+endfunction
+nnoremap <A-x> :call Term_toggle()<cr>

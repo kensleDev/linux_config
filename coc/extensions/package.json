@@ -14,6 +14,7 @@
     "coc-marketplace": ">=1.7.0",
     "coc-prettier": ">=1.1.18",
     "coc-python": ">=1.2.13",
+    "coc-sh": ">=0.6.0",
     "coc-tabnine": ">=1.2.2",
     "coc-tailwindcss": ">=0.7.0",
     "coc-terminal": ">=0.3.1",

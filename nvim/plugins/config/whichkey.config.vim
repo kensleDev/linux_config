@@ -24,30 +24,50 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Single mappings
+
+" Programs
 let g:which_key_map['e'] = [ ':CocCommand explorer --position right --width 70', 'explorer' ]
 let g:which_key_map['r'] = [ ':Ranger'                    , 'ranger' ]
 let g:which_key_map['q'] = [ ':Startify'                  , 'startify' ]
 
-" a is for comment
+" Movement
+let g:which_key_map['j'] = [ '<C-W>h'                 , 'left' ]
+let g:which_key_map['k'] = [ '<C-W>j'                 , 'down' ]
+let g:which_key_map['l'] = [ '<C-W>k'                 , 'up' ]
+let g:which_key_map[';'] = [ '<C-W>l'                 , 'right' ]
+let g:which_key_map['J'] = [ ':windo wincmd K'        , 'change splits horizontal' ]
+let g:which_key_map['K'] = [ ':windo wincmd H'        , 'change splits vertical' ]
+
 let g:which_key_map.a = {
      \ 'name' : '+comment',
      \ 'a' : [':Commentary' , 'comment'],
      \ }
 
-" g is for g
+let g:which_key_map.b = {
+     \ 'name' : '+buffer',
+     \ 'h' : ['<C-w>s' , 'split below'],
+     \ 'v' : ['<C-w>v' , 'split right'],
+     \ 'q' : ['<C-w>q' , 'split close'],
+     \ 'm' : [':tabedit %' , 'max current pane to tab'],
+     \ 'n' : [':tabclose' , 'back to split panes'],
+     \ }
+
+
+let g:which_key_map.c = {
+     \ 'name' : '+coc',
+     \ 'c' : [':CocAction("diagnosticNext")', 'next error'],
+     \ 'x' : ['CocAction("diagnosticPrevious")' , 'previous error'],
+     \ 'm' : [':CocList marketplace' , 'marketplace'],
+     \ '' : [':tabclose' , 'back to split panes'],
+     \ }
+
+
+
 let g:which_key_map.g = {
      \ 'name' : '+git',
      \ 'g' : [':FloatermNew lazygit' , 'lazygit'],
      \ 'b' : [':GBrowse'             , 'browse repo'],
      \ 'd' : [':Gdiffsplit'          , 'diff split'],
-     \ }
-
-" h is for comment
-let g:which_key_map.j = {
-     \ 'name' : '+splits',
-     \ 'j' : ['<C-w>s' , 'split below'],
-     \ 'k' : ['<C-w>v' , 'split right'],
-     \ ';' : ['<C-w>q' , 'split close'],
      \ }
 
 let g:which_key_map.f = {
@@ -56,7 +76,6 @@ let g:which_key_map.f = {
       \ 'p' : [':Farr --source=rgnvim'     , 'project'],
       \ }
 
-" s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
       \ '/' : [':History/'     , 'history'],
@@ -85,7 +104,6 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'          , 'FZF'],
       \ }
 
-" t is for terminal
 let g:which_key_map.t = {
      \ 'name' : '+terminal',
      \ 'q' : [':FloatermNew' , 'new'],
@@ -95,12 +113,18 @@ let g:which_key_map.t = {
      \ }
 
 
-" x is for comment
 let g:which_key_map.x = {
      \ 'name' : '+buffers',
-     \ 'x' : [':bd' , 'buffer close'],
-     \ 'c' : [':bn' , 'buffer next'],
+     \ 'c' : [':bd' , 'buffer close'],
+     \ 'x' : [':bn' , 'buffer next'],
      \ 'z' : [':bp' , 'buffer prev'],
+     \ }
+
+let g:which_key_map.w = {
+     \ 'name' : '+write',
+     \ 'e' : [':w' , 'write'],
+     \ 'q' : [':wq' , 'write quit'],
+     \ 'w' : [':bn' , 'buffer next'],
      \ }
 
 

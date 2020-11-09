@@ -161,6 +161,10 @@ cp ../dotfiles/tmux.conf $HOME_DIR &&
 mkdir -R ~/.config/tmux/plugins &&
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm &&
 
+# keyboard setup
+
+# sudo apt-get install -y xmodmap xorg-xev xorg-setxkbmap xorg-xset:
+
 
 # Clean up zsh
 echo "zsh" >> $HOME_DIR/.bashrc &&

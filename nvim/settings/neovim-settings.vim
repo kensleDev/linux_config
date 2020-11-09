@@ -8,8 +8,13 @@ set background=dark
 set t_Co=256
 set autowriteall
 
+set expandtab
+set tabstop=2
+set so=999
+:set shiftwidth=2
+:set autoindent
+:set smartindent
 
-" Enable true color 启用终端24位色
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"

@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'voldikss/vim-floaterm'
 	Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-        Plug 'mhinz/vim-startify'
+  Plug 'mhinz/vim-startify'
 	Plug 'ChristianChiarulli/far.vim'
 	Plug 'mhinz/vim-signify'
 	Plug 'tpope/vim-rhubarb'
@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tmux-plugins/vim-tmux'
 	Plug 'zhou13/vim-easyescape'
 	Plug 'tpope/vim-surround'
+  Plug 'ludovicchabant/vim-gutentags'
 
 " Initialize plugin system
 call plug#end()
